@@ -53,26 +53,26 @@ function toggleVisibility(id) {
     }
 }
 
-function tombol(){
+unction tombol(){
     let aritmatika = document.getElementById('aritmatika').value
     let angka1 = document.getElementById('angka1').value;
     let angka2 = document.getElementById('angka2').value;
     let hasil;
 
     if (aritmatika=='+') {
-        hasil=parseFloat(angka1)+parseFloat(angka2);
+        hasil=parseFloat(angka2)+parseFloat(angka1);
     }
     else if (aritmatika=='-') {
-        hasil=parseFloat(angka1)-parseFloat(angka2);
+        hasil=parseFloat(angka2)-parseFloat(angka1);
     }
     else if (aritmatika=='*') {
-        hasil=parseFloat(angka1)*parseFloat(angka2);
+        hasil=parseFloat(angka2)*parseFloat(angka1);
     }
     else if (aritmatika=='/') {
-        hasil=parseFloat(angka1) / parseFloat(angka2);
+        hasil=parseFloat(angka2) / parseFloat(angka1);
     }
     else if (aritmatika=='%') {
-        hasil=parseFloat(angka1)%parseFloat(angka2);
+        hasil=parseFloat(angka2)%parseFloat(angka1);
     }
     else{
         hasil='';
