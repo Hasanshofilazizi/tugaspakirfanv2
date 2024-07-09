@@ -23,19 +23,35 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }, 2000); 
 });
 
+
+function logout() {
+  
+    localStorage.removeItem('authToken');
+    sessionStorage.removeItem('authToken');
+
+
+    alert("Anda telah logout.");
+
+  
+    window.location.href = "index.html";
+}
+
+
+
+window.onload = function() {
+    document.getElementById('cal').style.display ="hidden";
+    document.getElementById('ls').style.display = "hidden";
+    document.getElementById('nl').style.display = "hidden";
+}
+
 function toggleVisibility(id) {
     var content = document.getElementById(id);
-    if (content.style.display === "none" || content.style.display === " ") {
+    if (content.style.display === "none") {
         content.style.display = "block";
     } else {
         content.style.display = "none";
     }
 }
-window.onload = function() {
-        document.getElementById('cal').style.display = 'none';
-        document.getElementById('ls').style.display = 'none';
-        document.getElementById('nl').style.display = 'none';
-    }
 
 function tombol(){
     let aritmatika = document.getElementById('aritmatika').value
@@ -53,7 +69,7 @@ function tombol(){
         hasil=parseFloat(angka1)*parseFloat(angka2);
     }
     else if (aritmatika=='/') {
-        hasil=parseFloat(angka1)/parseFloat(angka2);
+        hasil=parseFloat(angka1) / parseFloat(angka2);
     }
     else if (aritmatika=='%') {
         hasil=parseFloat(angka1)%parseFloat(angka2);
@@ -89,10 +105,10 @@ function showLuasInputs() {
             inputsHtml = '<div class="form-control mb-2"><label for="sisi">Masukkan sisi:</label><br><input type="number" id="sisi" step="any"></div>';
             break;
         case 'persegiPanjang':
-            inputsHtml = '<div class="form-control mb-2"><label for="panjang">Masukkan panjang:</label><br><input type="number" id="panjang" step="any"><label for="lebar">Masukkan lebar:</label><br><input type="number" id="lebar" step="any"></div>';
+            inputsHtml = '<div class="form-control mb-2"><label for="panjang">Masukkan panjang:</label><br><input type="number" id="panjang" step="any"><br><label for="lebar">Masukkan lebar:</label><br><input type="number" id="lebar" step="any"></div>';
             break;
         case 'jajargenjang':
-            inputsHtml = '<div class="form-control mb-2"><label for="alas">Masukkan alas:</label><br><input type="number" id="alas" step="any"><label for="tinggi">Masukkan tinggi:</label><input type="number" id="tinggi" step="any"></div>';
+            inputsHtml = '<div class="form-control mb-2"><label for="alas">Masukkan alas:</label><br><input type="number" id="alas" step="any"><br><label for="tinggi">Masukkan tinggi:</label><br><input type="number" id="tinggi" step="any"></div>';
             break;
         default:
             inputsHtml = '';
