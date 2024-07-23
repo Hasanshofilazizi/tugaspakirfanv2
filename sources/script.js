@@ -53,7 +53,7 @@ function toggleVisibility(id) {
     }
 }
 
-unction tombol(){
+function tombol(){
     let aritmatika = document.getElementById('aritmatika').value
     let angka1 = document.getElementById('angka1').value;
     let angka2 = document.getElementById('angka2').value;
